@@ -50,8 +50,12 @@ int main() {
     hsfs.close();
   }
 
+  Music msc = LoadMusicStream("data/music.mp3");
+  PlayMusicStream(msc);
+
   while (!WindowShouldClose() && !should_exit) {
     float dt = GetFrameTime();
+    UpdateMusicStream(msc);
 
     if (!dead) {
       s_x += s_s * (s_d ? -1 : 1);
@@ -146,5 +150,7 @@ int main() {
     hsfs_out.close();
   }
 
+  StopMusicStream(msc);
+  UnloadMusicStream(msc);
   return 0;
 }

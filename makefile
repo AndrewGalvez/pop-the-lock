@@ -84,8 +84,6 @@ wasm: clean-wasm
 		-s USE_GLFW=3 -s USE_WEBGL2=1 \
 		-s ALLOW_MEMORY_GROWTH=1 \
 		-s ASYNCIFY=1 \
-		--preload-file assets \
-		--preload-file wasm_shaders@shaders \
 		--preload-file data \
 		-o index.html
 
